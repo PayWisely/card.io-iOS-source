@@ -122,10 +122,10 @@
     self.guideLayerLabel.numberOfLines = 0;
     [self addSubview:self.guideLayerLabel];
 
-    // Shutter view for shutter-open animation
-    _shutter = [[CardIOShutterView alloc] initWithFrame:CGRectZero];
-    [self.shutter setOpen:NO animated:NO duration:0];
-    [self addSubview:self.shutter];
+      // Shutter view for shutter-open animation
+      _shutter = [[CardIOShutterView alloc] initWithFrame:CGRectZero];
+      [self.shutter setOpen:NO animated:NO duration:0];
+      [self addSubview:self.shutter];
 
     // Tap-to-refocus support
     if([self.videoStream hasAutofocus]) {
@@ -483,7 +483,7 @@
 #pragma mark - CardIOVideoStreamDelegate methods
 
 - (void)videoStream:(CardIOVideoStream *)stream didProcessFrame:(CardIOVideoFrame *)processedFrame {
-  [self.shutter setOpen:YES animated:YES duration:0.5f];
+  [self.shutter setOpen:YES animated:!self.config.disableShutterAnimation duration:0.5f];
 
   // Hide instructions once we start to find edges
   if (processedFrame.numEdgesFound < 0.05f) {

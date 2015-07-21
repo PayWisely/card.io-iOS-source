@@ -130,6 +130,7 @@
   cardIOView.scannedImageDuration = [self.scannedImageDurationField.text floatValue];
 
   cardIOView.languageOrLocale = self.language;
+  cardIOView.disableShutterAnimation = YES;
 
 #if TEST_HIDEABLE_CARDIOVIEW
   self.hideableCardIOView.hidden = NO;

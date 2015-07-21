@@ -21,4 +21,7 @@
 @property(nonatomic, retain, readwrite) UIView *scanOverlayView;
 
 @property(nonatomic, assign, readwrite) CardIODetectionMode detectionMode;
+
+@property(nonatomic, assign, readwrite) BOOL disableShutterAnimation;
+
 @end

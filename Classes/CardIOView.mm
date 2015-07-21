@@ -340,6 +340,8 @@ CONFIG_PASSTHROUGH_READWRITE(UIView *, scanOverlayView, ScanOverlayView)
 
 CONFIG_PASSTHROUGH_READWRITE(CardIODetectionMode, detectionMode, DetectionMode)
 
+CONFIG_PASSTHROUGH_READWRITE(BOOL, disableShutterAnimation, DisableShutterAnimation)
+
 @end
 
 #else // USE_CAMERA || SIMULATE_CAMERA
