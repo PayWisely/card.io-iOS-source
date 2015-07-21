@@ -1724,7 +1724,6 @@
 			buildConfigurationList = 3E9F4C45181F03F300F33B48 /* Build configuration list for PBXNativeTarget "CardIO" */;
 			buildPhases = (
 				3E9F4BDA181F03F300F33B48 /* Get version from git tag */,
-				3E9F4BDB181F03F300F33B48 /* Establish strings pre-commit script */,
 				3E9F4BDC181F03F300F33B48 /* Baler */,
 				3E9F4BDD181F03F300F33B48 /* Sources */,
 				3E9F4C11181F03F300F33B48 /* Frameworks */,
@@ -1866,20 +1865,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "if [ -z \"$ICC_VERSION\" ]\nthen\nICC_VERSION=`git describe --match=iOS_[0-9]*\\.[0-9]* --tags --always --dirty | sed \"s/iOS_//\" | sed \"s/-.*//\"`\nfi\necho \"Using version: $ICC_VERSION\"\n\nsed s/icc-version-undefined/$ICC_VERSION/g <Classes/CardIOIccVersion.h.template >Classes/CardIOIccVersion.h";
-		};
-		3E9F4BDB181F03F300F33B48 /* Establish strings pre-commit script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Establish strings pre-commit script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "export PATH=\"/usr/local/bin:$PATH\"\nif [ -d \".git\" ]; then\n  if [ ! -L \".git/hooks/pre-commit\" ]; then\n    echo \"Installing pre-commit hook for strings submodule\"\n    mkdir -p \".git/hooks\"\n    ln -s `pwd`/scripts/string_scripts/pre-commit.sh .git/hooks/pre-commit\n  fi\nfi";
 		};
 		3E9F4BDC181F03F300F33B48 /* Baler */ = {
 			isa = PBXShellScriptBuildPhase;
